@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+}
+
+:root,
+[data-theme="coffee"] {
+  --bg: #0f0f10;
+  --bg-elevated: #141416;
+  --surface: #18181b;
+  --surface-2: #1f1f23;
+  --border: rgba(197, 160, 89, 0.16);
+  --text: #f4f0e8;
+  --muted: #a8a29e;
+  --accent: #c5a059;
+  --accent-soft: rgba(197, 160, 89, 0.16);
+  --accent-text: #1a140c;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+  --hero: linear-gradient(180deg, rgba(15, 15, 16, 0.35) 10%, rgba(15, 15, 16, 0.92) 78%);
+  --radius: 1.25rem;
+  --nav-bg: rgba(15, 15, 16, 0.88);
+  --display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+}
+
+[data-theme="light"] {
+  --bg: #f6f1e8;
+  --bg-elevated: #fffdf8;
+  --surface: #ffffff;
+  --surface-2: #f3eadc;
+  --border: rgba(92, 64, 32, 0.12);
+  --text: #1c1917;
+  --muted: #78716c;
+  --accent: #a67c3d;
+  --accent-soft: rgba(166, 124, 61, 0.14);
+  --accent-text: #fffaf3;
+  --shadow: 0 16px 40px rgba(80, 50, 20, 0.12);
+  --hero: linear-gradient(180deg, rgba(28, 25, 23, 0.2) 10%, rgba(28, 25, 23, 0.78) 80%);
+  --nav-bg: rgba(255, 253, 248, 0.9);
+  --display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+}
+
+[data-theme="minimal"] {
+  --bg: #111111;
+  --bg-elevated: #161616;
+  --surface: #191919;
+  --surface-2: #222;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #f5f5f5;
+  --muted: #9ca3af;
+  --accent: #e5e5e5;
+  --accent-soft: rgba(255, 255, 255, 0.08);
+  --accent-text: #111;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --hero: linear-gradient(180deg, rgba(17, 17, 17, 0.25) 10%, rgba(17, 17, 17, 0.92) 82%);
+  --radius: 0.75rem;
+  --nav-bg: rgba(17, 17, 17, 0.9);
+  --display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+}
+
+[data-theme="premium"] {
+  --bg: #0c0a09;
+  --bg-elevated: #12100d;
+  --surface: #171411;
+  --surface-2: #221c16;
+  --border: rgba(212, 175, 106, 0.28);
+  --text: #f8f1e3;
+  --muted: #c4b8a4;
+  --accent: #d4af6a;
+  --accent-soft: rgba(212, 175, 106, 0.18);
+  --accent-text: #1a140c;
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+  --hero: linear-gradient(180deg, rgba(12, 10, 9, 0.2) 8%, rgba(12, 10, 9, 0.92) 78%);
+  --radius: 1.5rem;
+  --nav-bg: rgba(12, 10, 9, 0.9);
+  --display: "Playfair Display", Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+#root {
+  max-width: 520px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  background: var(--bg);
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  body {
+    background: #09090b;
+  }
+  #root {
+    max-width: 480px;
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.45);
+  }
+}
+
+.font-display {
+  font-family: var(--display);
+}
+
+.page-enter {
+  animation: fadeUp 0.35s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
